@@ -6,7 +6,7 @@
     "url": "https://github.com/danielschmitz/crud-vuejs.git"
   },
   "description": "Um crud com Vue.js e json-server",
-  "author": "Daniel Schmitz <danieljfa@gmail.com>",
+  "author": "Fabricio Machado <fbrc.machado@gmail.com>",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "serve": "json-server --watch cervejarias.json --static ./ --port 8080",
