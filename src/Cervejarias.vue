@@ -1,12 +1,12 @@
 <template>
-  <a class="fixo button is-large is-danger is-loading" v-show="isLoading">Loading</a>
+  <a class="fixo button is-large is-danger is-loading" v-show="isLoading">Carregando</a>
   <div class="container">
     <h1 class="title">{{title}}</h1>
     <div class="columns">
       <div class="column is-5">
         <p class="control has-addons">
-          <input class="input is-expanded" type="text" placeholder="Procure pelo nome" v-model="search">
-          <a class="button is-info" @click.prevent="searchBreweries">Search</a>
+          <input class="input is-expanded" type="text" placeholder="Digite o nome da cervejaria..." v-model="search">
+          <a class="button is-info" @click.prevent="searchBreweries">Buscar</a>
         </p>
       </div>
       <div class="column is-6">
@@ -73,7 +73,7 @@
       <div class="column">
         <label class="label">Nome</label>
           <p class="control">
-            <input class="input" type="text" placeholder="Text input" v-model="selected.name">
+            <input class="input" type="text" placeholder="Digite o nome..." v-model="selected.name">
           </p>
       </div>
       <div class="column">
@@ -86,12 +86,12 @@
 
       <label class="label">Descrição</label>
       <p class="control">
-        <textarea class="textarea" placeholder="Textarea" v-model="selected.descript"></textarea>
+        <textarea class="textarea" placeholder="Digite a descrição..." v-model="selected.descript"></textarea>
       </p>
       
    <label class="label">Website</label>
     <p class="control">
-      <input class="input" type="text" placeholder="Text input" v-model="selected.website">
+      <input class="input" type="text" placeholder="Digite o site da empresa..." v-model="selected.website">
     </p>
 
     </section>
@@ -111,7 +111,7 @@
     data () {
       return {
         isLoading: false,
-        title: 'Vue.js Crud',
+        title: 'Cervejarias',
         search: '',
         breweries: [],
         page: 1,
