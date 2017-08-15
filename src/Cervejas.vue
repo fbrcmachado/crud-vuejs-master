@@ -22,8 +22,6 @@
         <table class="table is-narrow is-bordered">
           <thead>
             <th>Nome</th>
-            <th>Cidade</th>
-            <th>Telefone</th>
             <!--<th>Mais</th>-->
             <th>Ações</th>
             </tr>
@@ -31,8 +29,6 @@
           <tbody>
             <tr v-for="brewery in breweries">
               <td>{{brewery.name}}</td>
-              <td>{{brewery.city}}</td>
-              <td>{{brewery.phone}}</td>
               <!--<td class="is-icon">
                 <a href="#">
                   <i class="fa fa-map-marker"></i>
@@ -144,7 +140,7 @@
           qString = `&q=${this.search}`
         }
 
-        this.$http.get(`/breweries?_start=${start}&_end=${end}${qString}`).then(
+        this.$http.get(`/beers?_start=${start}&_end=${end}${qString}`).then(
           response => {
             t.breweries = response.json()
             t.total = response.headers['X-Total-Count']
@@ -181,7 +177,7 @@
           closeOnConfirm: false
         }, function () {
 
-          self.$http.delete(`/breweries/${brewery.id}`).then(
+          self.$http.delete(`/beers/${brewery.id}`).then(
             result => {
               swal("Cervejaria removida!")
               self.loadBreweries()
@@ -191,7 +187,7 @@
       },
       saveBrewery() {
         if (this.selected.id != null) {  //EDIT
-          this.$http.put(`/breweries/${this.selected.id}`, this.selected).then(
+          this.$http.put(`/beers/${this.selected.id}`, this.selected).then(
             response => {
               this.$set('selected', {})
               this.$set('showModal', false)
@@ -204,7 +200,7 @@
             )
         }
         else { //NEW
-          this.$http.post(`/breweries`, this.selected).then(
+          this.$http.post(`/beers`, this.selected).then(
             response => {
               this.$set('selected', {})
               this.$set('showModal', false)
