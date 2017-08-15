@@ -173,7 +173,7 @@
        },
        removeBrewery(brewery){
         let self = this;
-        swal({  title: "Você tem certeza?",
+        swal({  title: "Confirma a exclusão do registro?",
                  text: `Deseja apagar "${brewery.name}"`,   
                  type: "warning",   
                  showCancelButton: true,   
