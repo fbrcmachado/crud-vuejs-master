@@ -103,7 +103,7 @@
     data() {
       return {
         isLoading: false,
-        title: 'Cervejarias',
+        title: 'Cervejas',
         search: '',
         breweries: [],
         page: 1,
